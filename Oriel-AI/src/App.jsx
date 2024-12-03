@@ -1,15 +1,13 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import LaunchingScreen from './pages/launchingScreen/launchingScreen'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-     
-    </>
+    <div className="app-container">
+      <LaunchingScreen />
+    </div>
   )
 }
 
