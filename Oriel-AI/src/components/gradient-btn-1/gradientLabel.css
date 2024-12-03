@@ -1,0 +1,28 @@
+.btn-container{
+    background: #222;
+    border: var(--border-1);
+    color: var(--base-white);
+    width: fit-content;
+
+    && .icons {
+        div:not(:first-child){
+            margin-left: -0.25rem;
+        }
+    }
+
+    && .circ{
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+        background: var(--bg);
+    }
+    && .circ-1{
+        --bg: #D9D9D9;
+    }
+    && .circ-2{
+        --bg: #B8B8B8;
+    }
+    && .circ-3{
+        --bg: #999999;
+    }
+}
