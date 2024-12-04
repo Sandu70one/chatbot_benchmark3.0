@@ -1,14 +1,19 @@
-import { useState } from 'react'
-import './App.css'
-import LaunchingScreen from './pages/launchingScreen/launchingScreen'
+import "./App.css";
+import LaunchingScreen from "./pages/launchingScreen/launchingScreen";
+import ChattingScreen from "./pages/chattingScreen/chattingScreen.jsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-
   return (
-    <div className="app-container">
-      <LaunchingScreen />
-    </div>
-  )
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LaunchingScreen />} />
+          <Route path="/chatting" element={<ChattingScreen />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
-export default App
+export default App;

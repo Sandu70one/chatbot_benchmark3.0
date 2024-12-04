@@ -6,8 +6,6 @@
 }
 body{
     background: var(--bg-black-dark);
-    background-image: url("src/assets/Star bg.svg");
-    background-size: 80%;
 }
 .bg-circle-top{
     --rad: 25vw;
