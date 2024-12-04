@@ -2,11 +2,14 @@ import React from "react";
 import "./chat.css";
 import LogoBig from "../../components/logo-big/LogoBig";
 import PromptField from "../../components/promptField/PromptField";
+import DropDown from "../../components/dropDown/DropDown";
 
 function Chat() {
 	return (
-		<div className="single-page p-2 flex flex-col justify-between items-start">
-			<div className="dropdown">Dropdown</div>
+		<div className="single-page p-3 flex flex-col justify-between items-start">
+			<div className="dropdown ml-8">
+                <DropDown />
+            </div>
 			<div className="container flex flex-col gap-y-10 items-center">
 				<LogoBig />
 				<div className="welcome-text gap-y-2 mt-4 flex flex-col items-center text-center">
@@ -20,7 +23,7 @@ function Chat() {
 					<PromptField />
 				</div>
 			</div>
-				<p className="accuracy-text text-center w-full mt-32">
+				<p className="accuracy-text text-center w-full text-sm mt-32">
 					Use Oriel as a guide, but confirm facts independently for
 					accuracy.
 				</p>

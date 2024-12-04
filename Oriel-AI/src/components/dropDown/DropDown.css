@@ -1,0 +1,12 @@
+.dropdown-head{
+    color: var(--grey-2);
+    border: 1px solid transparent;
+    transition: 0.25s ease;
+}
+.dropdown-head:hover{
+    background: #222222;
+    border: var(--border-1);
+}
+.dropdown-head:active{
+    color: var(--white);
+}

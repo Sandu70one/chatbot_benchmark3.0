@@ -2,6 +2,7 @@ import React from "react";
 import "./PromptField.css";
 import { AudioLines, CornerDownLeft, Paperclip } from "lucide-react";
 import IconBtn from "../iconBtn/IconBtn";
+import ActionKey from "../actionKey/ActionKey";
 
 function PromptField() {
 	return (
@@ -15,12 +16,7 @@ function PromptField() {
 					name="prompt-field"
 					id="prompt-field"
 				/>
-				<div className="action-btn flex items-center gap-2 rounded-xl px-2 py-1">
-					<div className="action capitalize text-xs py-2 ">ask</div>
-					<div className="key-icon p-1 rounded-md">
-						<CornerDownLeft size={12} strokeWidth={4} />
-					</div>
-				</div>
+                <ActionKey text="ask" keyIcon={<CornerDownLeft size={12} strokeWidth={4} />} />
 				<div className="seperator-line -mx-3"></div>
 			</div>
 			<div className="att-field flex justify-between items-center py-2">

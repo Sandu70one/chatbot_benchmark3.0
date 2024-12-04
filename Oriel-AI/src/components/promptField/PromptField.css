@@ -12,16 +12,7 @@
 			outline: 0;
 			flex: 1;
 		}
-        && .action-btn {
-            background: var(--inp-bg-2);
-            color: #858585;
-            cursor: pointer;
-
-            && .key-icon{
-                background: #4c4c4c;
-                color: #2f2f2f;
-            }
-        }
+        
 	}
     && .att-field {
         color: var(--grey-3);

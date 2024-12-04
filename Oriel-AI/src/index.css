@@ -35,3 +35,9 @@ html{
   font-family: "Satoshi", sans-serif;
   font-size: 14px;
 }
+.single-page{
+  min-height: 100dvh;
+  width: 100%;
+  color: white;
+  position: relative;
+}
