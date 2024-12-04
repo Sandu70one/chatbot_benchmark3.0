@@ -1,0 +1,37 @@
+.inp-field {
+	background: var(--inp-bg);
+	min-width: 40vw;
+
+	&& .TA-field {
+        position: relative;
+
+
+		&& #prompt-field {
+			border: 0;
+			background: transparent;
+			outline: 0;
+			flex: 1;
+		}
+        && .action-btn {
+            background: var(--inp-bg-2);
+            color: #858585;
+            cursor: pointer;
+
+            && .key-icon{
+                background: #4c4c4c;
+                color: #2f2f2f;
+            }
+        }
+	}
+    && .att-field {
+        color: var(--grey-3);
+    }
+}
+.seperator-line{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: var(--border-clr-4);
+}

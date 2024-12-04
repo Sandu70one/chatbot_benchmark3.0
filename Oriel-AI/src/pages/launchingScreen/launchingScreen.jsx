@@ -29,7 +29,7 @@ return (
 				delivering intelligent solutions and real-time insights to boost
 				productivity
 			</div>
-			<div className="ctas flex font-medium gap-4 mt-2">
+			<div className="ctas flex font-medium items-center gap-4 mt-2">
 				<div className="sec-btn">
 					<SecondaryBtn
 						text="Download desktop app"

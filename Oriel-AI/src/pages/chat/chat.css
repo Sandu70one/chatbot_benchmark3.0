@@ -1,0 +1,18 @@
+.container {
+	width: 100%;
+
+	&& span.usrName {
+		background-image: linear-gradient(to right, #9747FF, #653BF1, #3594DC);
+		color: transparent;
+		background-clip: text;
+	}
+
+    && .welcome-text {
+        && .subtitle{
+            color: var(--grey-2);
+        }
+    }
+}
+&& .accuracy-text{
+    color: var(--grey-3);
+}
