@@ -1,6 +1,7 @@
 import React from "react";
 import "./chattingScreen.css";
 import { useState } from "react";
+import { ChatInterface } from "./chat/chatInterface";
 
 function chattingScreen() {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,10 +59,13 @@ function chattingScreen() {
                 </div>
               )}
             </div>
+            
           </div>
         </div>
       </div>
+      <div><ChatInterface/></div>
     </div>
+    
   );
 }
 
