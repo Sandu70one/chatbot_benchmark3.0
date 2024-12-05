@@ -25,4 +25,9 @@
     && .circ-3{
         --bg: #999999;
     }
+
+    && .text{
+        color: #d3d3d3;
+        font-weight: 500;
+    }
 }
