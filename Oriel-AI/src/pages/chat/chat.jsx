@@ -6,7 +6,7 @@ import DropDown from "../../components/dropDown/DropDown";
 
 function Chat() {
 	return (
-		<div className="single-page p-3 flex flex-col justify-between items-start">
+		<div className="single-page p-3 flex flex-col items-start">
 			<div className="dropdown ml-8">
                 <DropDown />
             </div>

@@ -10,3 +10,25 @@
 .dropdown-head:active{
     color: var(--white);
 }
+.dropDown-item{
+    background: var(--inp-bg-3);
+    cursor: pointer;
+    color: var(--grey-4);
+    transition: background 0.25s ease, color 0.25s ease;
+}
+.dropDown-item:hover {
+    background: var(--inp-bg-2);
+    color: var(--base-white);
+}
+.drop-items{
+    position: absolute;
+    left: 0;
+    top: calc(100% + 0.25rem);
+}
+.dropdwon-menu{
+    position: relative;
+}
+.testHover{
+    border: 1px solid white;
+    padding: 1rem;
+}
