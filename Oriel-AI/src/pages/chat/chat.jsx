@@ -23,7 +23,7 @@ function Chat() {
 					<PromptField />
 				</div>
 			</div>
-				<p className="accuracy-text text-center w-full text-sm mt-32">
+				<p className="accuracy-text text-center w-full text-sm">
 					Use Oriel as a guide, but confirm facts independently for
 					accuracy.
 				</p>

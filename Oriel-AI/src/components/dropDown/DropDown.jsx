@@ -7,7 +7,7 @@ import { style } from "motion/react-client";
 
 const dropdDownMenu = [
 	{
-		title: "Oriel Advanced",
+		title: "Oriel Pro",
 		icon: <Sparkle size={14} fill="white" />,
 	},
 	{
@@ -24,21 +24,26 @@ const btnVariants = {
 	initial: {
 		border: "1px solid transparent",
 		backgroundColor: "#0F0F0F",
-		width: "100px",
+		width: "100%",
+		color: "#BFBFBF"
 	},
 	hover: {
 		width: "12rem",
 		backgroundColor: "#222222",
 		border: "1px solid transparent",
+		color: "#BFBFBF"
 	},
 	active: {
 		width: "12rem",
 		backgroundColor: "#222222",
 		border: "1px solid #2B2B2B",
+		color: "#E8E8E8",
+		
 	},
 };
 
 function DropDown() {
+	const [model, setModel] = useState("Oriel");
 	const [hover, setHover] = useState(false);
 	const [active, setActive] = useState(false);
 	const widthAnimation = useAnimation();
@@ -58,9 +63,7 @@ function DropDown() {
 	useEffect(() => {
 		if (active) {
 			widthAnimation.start("active");
-		} else if (!hover && active) {
-			widthAnimation.start("active");
-		} else {
+		}else {
 			widthAnimation.stop("hover");
 			widthAnimation.start("initial");
 		}
@@ -71,11 +74,13 @@ function DropDown() {
 				className="dropdown-head w-48 px-4 pr-2 py-1.5 rounded-xl cursor-pointer flex items-center justify-between"
 				animate={widthAnimation}
 				variants={btnVariants}
+				initial="initial"
+				transition={{duration: 0.1, ease: "easeInOut"} }
 				onClick={() => setActive(!active)}
 				onMouseEnter={() => setHover(true)}
 				onMouseLeave={() => setHover(false)}
 			>
-				<div className="text text-lg mr-6 font-medium">Oriel</div>
+				<div className="text text-lg mr-6 font-medium">{model}</div>
 				<div className="down">
 					{active ? (
 						<ChevronUp size={18} strokeWidth={3} />
@@ -93,10 +98,15 @@ function DropDown() {
 									<motion.li
 										key={index}
 										layout
-										className="dropDown-item text-base px-4 rounded-xl py-2 flex gap-8 justify-between items-center w-full whitespace-nowrap"
-										exit={{ opacity: 0, scale: 1.1 }}
-										initial={{ opacity: 0, scale: 0.95 }}
-										animate={{ opacity: 1, scale: 1 }}
+										className="dropDown-item text-base px-4 rounded-xl py-2 flex gap-8 justify-between items-center w-48 whitespace-nowrap"
+										exit={{ opacity: 0, scale: 1.1, x: 20 }}
+										initial={{ opacity: 0, scale: 0.95, x: -20 }}
+										animate={{ opacity: 1, scale: 1, x: 0 }}
+										onClick={() => {
+											setModel(item.title);
+											setActive(false);
+										}}
+										transition={{ duration: 0.5,type: "spring", delay: index*0.1 }}
 									>
 										<div className="title">
 											{item.title}

@@ -1,5 +1,6 @@
 .container {
 	width: 100%;
+    flex: 1;
 
 	&& span.usrName {
 		background-image: linear-gradient(to right, #9747FF, #653BF1, #3594DC);
