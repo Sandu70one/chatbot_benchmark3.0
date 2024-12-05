@@ -2,7 +2,7 @@ import React from "react";
 
 export const ActionButtons = ({ buttons }) => {
   return (
-    <div 
+    <div
       className="flex gap-px items-center self-end mt-4 mr-5 max-md:mr-2.5"
       role="toolbar"
       aria-label="Message actions"

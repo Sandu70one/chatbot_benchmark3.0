@@ -59,13 +59,13 @@ function chattingScreen() {
                 </div>
               )}
             </div>
-            
           </div>
         </div>
       </div>
-      <div><ChatInterface/></div>
+      <div>
+        <ChatInterface />
+      </div>
     </div>
-    
   );
 }
 
