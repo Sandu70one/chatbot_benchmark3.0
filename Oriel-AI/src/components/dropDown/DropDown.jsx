@@ -99,8 +99,8 @@ function DropDown() {
 										key={index}
 										layout
 										className="dropDown-item text-base px-4 rounded-xl py-2 flex gap-8 justify-between items-center w-48 whitespace-nowrap"
-										exit={{ opacity: 0, scale: 1.1, x: 20 }}
-										initial={{ opacity: 0, scale: 0.95, x: -20 }}
+										exit={{ opacity: 0, scale: 1.1, x: 15 }}
+										initial={{ opacity: 0, scale: 0.95, x: -15 }}
 										animate={{ opacity: 1, scale: 1, x: 0 }}
 										onClick={() => {
 											setModel(item.title);
