@@ -1,0 +1,21 @@
+.pri-btn {
+	background: var(--linear-1) padding-box,
+	var(--linear-2) border-box;
+	color: var(--base-white);
+	border: 1px solid transparent;
+	border-radius: 0.5rem;
+	font-size: 1rem;
+	transition: 0.25s;
+	height: 40px;
+	user-select: none;
+	align-items: center;
+
+	&:hover {
+		background: linear-gradient(95deg, #232323 11.34%, #313131 114.28%) padding-box,
+		var(--linear-2) border-box;
+	}
+  
+  &:active{
+    scale: 0.98;
+}
+}
