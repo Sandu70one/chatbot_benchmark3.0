@@ -180,7 +180,7 @@ function Chat() {
                   <div className="voice-wave">
                     <div className="left-fade"></div>
                     <img
-                      src="src/assets/Mic input.png"
+                      src="/assets/Mic input.png"
                       className="mx-auto"
                       alt=""
                     />
