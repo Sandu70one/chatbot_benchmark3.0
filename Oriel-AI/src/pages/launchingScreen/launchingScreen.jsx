@@ -11,14 +11,14 @@ function LaunchingScreen() {
 return (
 	<div
 		className="launch-container single-page flex flex-col items-center justify-center"
-		style={{ backgroundImage: 'url("src/assets/Star bg.svg")', backgroundSize: '80%' }}
+		style={{ backgroundImage: 'url("/assets/Star bg.svg")', backgroundSize: '80%' }}
 	>
 		<div className="bg-circle-top"></div>
 		<div className="content gap-y-6 flex flex-col items-center pb-24">
 			<GradientLabel>Trusted by 200,000+ people</GradientLabel>
 			<img
 				className="logo mt-2"
-				src="src/assets/logo-black-bg.svg"
+				src="/assets/logo-black-bg.svg"
 				alt="Oriel logo"
 			/>
 			<div className="title text-4xl mt-9">
@@ -44,7 +44,7 @@ return (
 			</div>
 		</div>
 		<div className="bg-circle-bottom">
-			<img src="src/assets/circ-bg-bottom.png" alt="" />
+			<img src="/assets/circ-bg-bottom.png" alt="" />
 		</div>
 	</div>
 );
