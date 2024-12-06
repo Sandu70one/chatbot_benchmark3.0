@@ -1,10 +1,35 @@
-&& .action-btn {
+.action-btn {
     background: var(--inp-bg-2);
     color: #858585;
     cursor: pointer;
+    user-select: none;
 
+    && .action.active{
+        color: #f1f1f1;
+    }
     && .key-icon{
         background: #4c4c4c;
+        color: #2f2f2f;
+    }
+    && .key-icon.active{
+        background: #f1f1f1;
+    }
+    && .esc{
+        color: #838383;
+        font-size: 0.65rem;
+        font-weight: 800;
+        padding-inline: 0.1rem !important;
+        padding-block: 0.15rem !important;
+        line-height: 12px;
+    }
+}
+.action-btn.valid{
+    && .action{
+        color: #f1f1f1;
+        transition: background 0.1s ease, color 0.1s ease;
+    }
+    && .key-icon{
+        background: #f1f1f1;
         color: #2f2f2f;
     }
 }

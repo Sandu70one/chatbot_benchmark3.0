@@ -12,6 +12,7 @@
   --bg-black-dark: #0F0F0F;
   --inp-bg: #2F2F2F;
   --inp-bg-2: #272727;
+  --inp-bg-3: #1B1B1B;
   --border-clr-1: #2B2B2B;
   --border-clr-2: #343434;
   --border-clr-3: #232323;
@@ -29,6 +30,9 @@
   --grey-1: #7F7F7F;
   --grey-2: #B9B9B9;
   --grey-3: #858585;
+  --grey-4: #B2B2B2;
+  --grey-5: #9b9b9b;
+  --grey-6: #C3C3C3;
 }
 
 html{
@@ -36,7 +40,7 @@ html{
   font-size: 14px;
 }
 .single-page{
-  min-height: 100dvh;
+  height: 100dvh;
   width: 100%;
   color: white;
   position: relative;

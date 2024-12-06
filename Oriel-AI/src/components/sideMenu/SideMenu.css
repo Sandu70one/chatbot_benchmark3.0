@@ -1,0 +1,41 @@
+.sideMenu{
+    background: var(--border-clr-1);
+    border: 1px solid var(--border-clr-5);
+
+    && .menu-head {
+        min-width: 18rem;
+        color: var(--grey-3);
+
+        && .toggle {
+            background: var(--border-clr-2);
+            border: 1px solid var(--border-clr-4);
+            cursor: pointer;
+        }
+    }
+    && .profile {
+
+        && .details {
+            && .email {
+                color: var(--grey-5);
+            }
+        }
+
+        && .plan {
+            background: #3c3c3c;
+            border: 1px solid var(--border-clr-4);
+        }
+    } 
+}
+.sideMenu > div{
+    position: relative;
+}
+.sideMenu > div:not(:last-child):after{
+    content: "";
+    position: absolute;
+    margin-inline: -22px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    bottom: 0;
+    background: var(--border-clr-5);
+}
