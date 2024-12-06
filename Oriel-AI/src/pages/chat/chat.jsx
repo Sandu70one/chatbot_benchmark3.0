@@ -6,7 +6,14 @@ import PromptField, {
 } from "../../components/promptField/PromptField";
 import DropDown from "../../components/dropDown/DropDown";
 import ActionKey from "../../components/actionKey/ActionKey";
-import { ChartLine, ChartLineIcon, Code, Code2, CornerDownLeft, Image } from "lucide-react";
+import {
+	ChartLine,
+	ChartLineIcon,
+	Code,
+	Code2,
+	CornerDownLeft,
+	Image,
+} from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import SideMenu from "../../components/sideMenu/SideMenu";
 import Btn1 from "../../components/btn-1/Btn1";
@@ -72,13 +79,14 @@ const bgVariant = {
 
 function Chat() {
 	const [popActive, setPopActive] = useState(false);
+	const [chatStarted, setChatStarted] = useState(false);
 
 	return (
 		<PopupsContext.Provider value={{ popActive, setPopActive }}>
 			<div className="single-page overflow-y-clip py-3 flex ">
-                <div className="ml-2 side-menu-container">
-                    <SideMenu />
-                </div>
+				<div className="ml-2 side-menu-container">
+					<SideMenu />
+				</div>
 				<div className="body flex-1 flex flex-col items-start">
 					<div className="dropdown ml-4">
 						<DropDown />
@@ -95,26 +103,50 @@ function Chat() {
 							></motion.div>
 						)}
 					</AnimatePresence>
-					<div className="container flex flex-col gap-y-10 items-center">
-						<LogoBig />
-						<div className="welcome-text gap-y-2 mt-4 flex flex-col items-center text-center">
-							<div className="title text-3xl flex gap-2 font-bold">
-								Hello,
-								<span className="usrName capitalize">
-									naleeka
-								</span>
+					<div
+						className={
+							chatStarted
+								? "container flex flex-col gap-y-10 justify-end"
+								: "container flex flex-col gap-y-10 items-center"
+						}
+					>
+						<AnimatePresence>
+							{!chatStarted && <LogoBig />}
+
+							{!chatStarted && (
+								<div className="welcome-text gap-y-2 mt-4 -mb-8 flex flex-col items-center text-center">
+									<div className="title text-3xl flex gap-2 font-bold">
+										Hello,
+										<span className="usrName capitalize">
+											naleeka
+										</span>
+									</div>
+									<div className="subtitle text-xl">
+										Let’s get started, ask me anything
+									</div>
+								</div>
+							)}
+							<div className={chatStarted ? " w-30 mx-auto" : ""}>
+								<PromptField />
 							</div>
-							<div className="subtitle text-xl">
-								Let’s get started, ask me anything
-							</div>
-							<PromptField />
-						</div>
-                        <div className="quick-btns flex justify-between -mt-6 gap-5">
-                            <Btn1 text="Create image" icon={<Image size={15}/>}/>
-                            <Btn1 text="Code generation" icon={<Code2 size={15}/>}/>
-                            <Btn1 text="Data analysis & insights" icon={<ChartLine size={15}/>}/>
-                            <Btn1 text="More"/>
-                        </div>
+							{!chatStarted && (
+								<div className="quick-btns flex justify-between -mt-6 gap-5">
+									<Btn1
+										text="Create image"
+										icon={<Image size={15} />}
+									/>
+									<Btn1
+										text="Code generation"
+										icon={<Code2 size={15} />}
+									/>
+									<Btn1
+										text="Data analysis & insights"
+										icon={<ChartLine size={15} />}
+									/>
+									<Btn1 text="More" />
+								</div>
+							)}
+						</AnimatePresence>
 					</div>
 					<p className="accuracy-text text-center w-full text-sm">
 						Use Oriel as a guide, but confirm facts independently
