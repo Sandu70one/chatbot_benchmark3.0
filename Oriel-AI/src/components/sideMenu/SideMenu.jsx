@@ -1,6 +1,7 @@
 import React from 'react'
 import './SideMenu.css'
-import { Table2, Search, SquarePlus } from 'lucide-react'
+import { Table2, Search, SquarePlus, History } from 'lucide-react'
+import ChatHeadBtn from '../chatHeadBtn/ChatHeadBtn'
 
 function SideMenu() {
   return (
@@ -26,7 +27,9 @@ function SideMenu() {
             </div>
             <div className="plan py-2 px-3 capitalize text-xs font-medium rounded-lg">free</div>
         </div>
-        <div className="chat-head">c</div>
+        <div className="chat-head flex items-center gap-5">
+            <ChatHeadBtn text="chat history" icon={<History size={14}/>} />
+        </div>
     </div>
   )
 }
