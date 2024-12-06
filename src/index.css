@@ -1,0 +1,64 @@
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --bg-black-dark: #0f0f0f;
+  --inp-bg: #2f2f2f;
+  --inp-bg-2: #272727;
+  --inp-bg-3: #1b1b1b;
+  --border-clr-1: #2b2b2b;
+  --border-clr-2: #343434;
+  --border-clr-3: #232323;
+  --border-clr-4: #474747;
+  --border-clr-5: #3f3f3f;
+  --border-1: 1px solid var(--border-clr-1);
+  --border-2: 1px solid var(--border-clr-2);
+  --linear-1: linear-gradient(96deg, #1b1b1b 11.33%, #222 97.74%);
+  --linear-2: linear-gradient(
+    96deg,
+    #f13bd5 0%,
+    #b22fe2 22%,
+    #9747ff 43%,
+    #653bf1 84%,
+    #3594dc 120%
+  );
+
+  /* font colors */
+  --base-white: #ffffff;
+  --white-1: #d4d4d4;
+
+  --grey-1: #7f7f7f;
+  --grey-2: #b9b9b9;
+  --grey-3: #858585;
+  --grey-4: #b2b2b2;
+  --grey-5: #9b9b9b;
+  --grey-6: #c3c3c3;
+
+  /* icons */
+  --primary-icon-bg: #3d3d3d;
+
+  /* hr */
+  --primary-hr-clr: #483d3d;
+  --secondary-hr-clr: #4B4B4B;
+  
+  /* slide buttons  */
+  --slide-btn-bg-clicked: #ebebeb;
+}
+
+html {
+  font-family: "Satoshi", sans-serif;
+  font-size: 14px;
+}
+.single-page {
+  height: 100dvh;
+  width: 100%;
+  color: white;
+  position: relative;
+}
