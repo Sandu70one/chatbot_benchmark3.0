@@ -112,13 +112,14 @@ function SideMenu({ setProfilePopup }) {
               className={
                 slideActive === btn.id
                   ? "btn font-medium bg-white text-black text-nowrap py-3 px-4 gap-2 items-center rounded-xl flex"
-                  : "text-white bg-transparent btn font-medium text-nowrap py-3 px-4 gap-2 items-center rounded-xl flex"
+                  : "text-white bg-transparent btn font-medium text-nowrap py-3 px-4 gap-2 items-center rounded-xl flex hover:bg-[var(--primary-icon-bg)]"
               }
             >
               {btn.icon}
               {btn.btn}
             </button>
           ))}
+          <div className="fade-right"></div>
         </div>
 
         <div className="seperator"></div>

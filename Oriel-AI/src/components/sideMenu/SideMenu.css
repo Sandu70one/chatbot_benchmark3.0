@@ -44,6 +44,7 @@
         scrollbar-width: none;
         width: 19.3rem;
         overflow-x: scroll;
+        position: relative;
 
         && button {
             transition: 0.25s;
