@@ -1,20 +1,11 @@
 import React, { useState } from "react";
 import "./chat.css";
 import LogoBig from "../../components/logo-big/LogoBig";
-import PromptField, {
-  PopupsContext,
-} from "../../components/promptField/PromptField";
+import PromptField, { PopupsContext } from "../../components/promptField/PromptField";
 import DropDown from "../../components/dropDown/DropDown";
 import ActionKey from "../../components/actionKey/ActionKey";
-import {
-  ChartLine,
-  ChartLineIcon,
-  Code,
-  Code2,
-  CornerDownLeft,
-  Image,
-} from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
+import { ChartLine, ChartLineIcon, Code, Code2, CornerDownLeft, Image } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import SideMenu from "../../components/sideMenu/SideMenu";
 import Btn1 from "../../components/btn-1/Btn1";
 import Conversation from "../../components/conversation/Conversation";
@@ -81,12 +72,13 @@ const bgVariant = {
 function Chat() {
   const [popActive, setPopActive] = useState(false);
   const [chatStarted, setChatStarted] = useState(true);
+  const [profilePopup, setProfilePopup] = useState(false);
 
   return (
     <PopupsContext.Provider value={{ popActive, setPopActive }}>
       <div className="single-page overflow-y-clip py-3 flex ">
         <div className="ml-2 side-menu-container">
-          <SideMenu />
+          <SideMenu setProfilePopup={setProfilePopup} />
         </div>
         <div className="body flex-1 flex flex-col items-start">
           <div className="dropdown ml-4">
@@ -103,6 +95,16 @@ function Chat() {
                 className="bg"
               ></motion.div>
             )}
+            {profilePopup && (
+              <motion.div
+                layout
+                variants={bgVariant}
+                animate={profilePopup ? "open" : "close"}
+                initial="close"
+                exit="close"
+                className="bg"
+              ></motion.div>
+            )}
           </AnimatePresence>
           <div
             className={
@@ -111,6 +113,10 @@ function Chat() {
                 : "container flex flex-col gap-y-10 items-center"
             }
           >
+            {profilePopup ? 
+              <button className="tog z-30 left-1/2 top-1/2 fixed p-2 rounded-lg capitalize text-xl font-bold bg-white text-black " onClick={() => setProfilePopup(false)}>close profile</button>  
+              : null
+            }
             <AnimatePresence>
               {!chatStarted && <LogoBig />}
               {!chatStarted && (
