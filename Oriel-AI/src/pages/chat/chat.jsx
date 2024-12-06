@@ -1,14 +1,25 @@
 import React, { useState } from "react";
 import "./chat.css";
 import LogoBig from "../../components/logo-big/LogoBig";
-import PromptField, { PopupsContext } from "../../components/promptField/PromptField";
+import PromptField, {
+  PopupsContext,
+} from "../../components/promptField/PromptField";
 import DropDown from "../../components/dropDown/DropDown";
 import ActionKey from "../../components/actionKey/ActionKey";
-import { ChartLine, ChartLineIcon, Code, Code2, CornerDownLeft, Image } from "lucide-react";
+import {
+  ChartLine,
+  ChartLineIcon,
+  Code,
+  Code2,
+  CornerDownLeft,
+  Image,
+} from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import SideMenu from "../../components/sideMenu/SideMenu";
 import Btn1 from "../../components/btn-1/Btn1";
 import Conversation from "../../components/conversation/Conversation";
+import Profile from "../../components/profile/profile";
+import { div } from "motion/react-client";
 
 const voiceVariants = {
   open: {
@@ -113,10 +124,17 @@ function Chat() {
                 : "container flex flex-col gap-y-10 items-center"
             }
           >
-            {profilePopup ? 
-              <button className="tog z-30 left-1/2 top-1/2 fixed p-2 rounded-lg capitalize text-xl font-bold bg-white text-black " onClick={() => setProfilePopup(false)}>close profile</button>  
-              : null
-            }
+            {profilePopup ? (
+              <div>
+                <button
+                  className="tog z-30 left-1/2 top-1/2 fixed p-2 rounded-lg capitalize text-xl font-bold bg-white text-black  "
+                  onClick={() => setProfilePopup(false)}
+                >
+                  close profile
+                </button>{" "}
+                  
+              </div>
+            ) : null}
             <AnimatePresence>
               {!chatStarted && <LogoBig />}
               {!chatStarted && (
