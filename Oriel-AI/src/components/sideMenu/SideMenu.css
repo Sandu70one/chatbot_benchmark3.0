@@ -10,6 +10,14 @@
             background: var(--border-clr-2);
             border: 1px solid var(--border-clr-4);
             cursor: pointer;
+            transition: background 0.25s ease, color 0.25s ease;
+        }
+        && .toggle:hover{
+            background: var(--border-clr-4);
+            color: var(--grey-4);
+        }
+        && .toggle:active{
+            background: var(--border-clr-3);
         }
     }
     && .profile {
@@ -24,28 +32,33 @@
             background: #3c3c3c;
             border: 1px solid var(--border-clr-4);
         }
-    } 
-}
-.sideMenu > div{
-    position: relative;
-}
-.sideMenu > div:not(:last-child):after{
-    content: "";
-    position: absolute;
-    margin-inline: -22px;
-    left: 0;
-    right: 0;
-    height: 1px;
-    bottom: 0;
-    background: var(--border-clr-5);
-}
 
-.past-chat-container::-webkit-scrollbar {
-    display: none;  
-  }
-  
-  .past-chat-container {
-    -ms-overflow-style: none;   
-    scrollbar-width: none;      
-  }
-  
+        && .account{
+            transition: background 0.25s ease;
+        }
+        && .account:hover{
+            background: var(--border-clr-2);
+        }
+    } 
+    && .tabs {
+        scrollbar-width: none;
+        width: 19.3rem;
+        overflow-x: scroll;
+
+        && button {
+            transition: 0.25s;
+            outline: 0;
+            border: 0;
+        } 
+        
+    }
+}
+.seperator{
+    width: 116%;
+    height: 1px;
+    background: var(--border-clr-5);
+    margin-inline: -22px;
+}
+.past-chat-container{
+    scrollbar-width: none;
+}
