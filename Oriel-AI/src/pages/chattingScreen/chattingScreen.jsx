@@ -1,7 +1,7 @@
 import React from "react";
 import "./chattingScreen.css";
 import { useState } from "react";
-
+import Profile from "../../components/profile/profile.jsx";
 function chattingScreen() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,7 +22,7 @@ function chattingScreen() {
 
         {/* chatting section */}
         <div class="col-span-9  ">
-          <div class="flex flex-row justify-start">
+          {/* <div class="flex flex-row justify-start">
             <div className="relative">
               <button
                 style={{ backgroundColor: "#0F0F0F" }}
@@ -58,7 +58,8 @@ function chattingScreen() {
                 </div>
               )}
             </div>
-          </div>
+          </div> */}
+          <Profile />
         </div>
       </div>
     </div>

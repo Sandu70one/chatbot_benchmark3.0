@@ -43,8 +43,11 @@
 
   /* icons */
   --primary-icon-bg: #3d3d3d;
+
   /* hr */
   --primary-hr-clr: #483d3d;
+  --secondary-hr-clr: #4B4B4B;
+  
   /* slide buttons  */
   --slide-btn-bg-clicked: #ebebeb;
 }
