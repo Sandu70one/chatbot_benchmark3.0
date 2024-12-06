@@ -1,0 +1,5 @@
+.head {
+  && .summary {
+    color: var(--grey-2);
+  }
+}

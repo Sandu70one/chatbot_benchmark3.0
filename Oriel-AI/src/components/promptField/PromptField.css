@@ -1,24 +1,26 @@
 .inp-field {
-	background: var(--inp-bg);
-	min-width: 40vw;
+    background: var(--inp-bg);
+    width: 600px;
 
-	&& .TA-field {
+    && .TA-field {
         position: relative;
 
 
-		&& #prompt-field {
-			border: 0;
-			background: transparent;
-			outline: 0;
-			flex: 1;
-		}
-        
-	}
+        && #prompt-field {
+            border: 0;
+            background: transparent;
+            outline: 0;
+            flex: 1;
+        }
+
+    }
+
     && .att-field {
         color: var(--grey-3);
     }
 }
-.seperator-line{
+
+.seperator-line {
     position: absolute;
     left: 0;
     right: 0;

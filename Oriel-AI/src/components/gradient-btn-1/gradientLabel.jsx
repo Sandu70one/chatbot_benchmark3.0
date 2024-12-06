@@ -3,7 +3,7 @@ import './gradientLabel.css'
 
 function GradientLabel(props) {
   return (
-    <div className="btn-container flex items-center normal flex-row gap-2.5 p-3 rounded-xl">
+    <div className="btn-container-1 flex items-center flex-row gap-2.5 p-2.5 text-xs rounded-xl">
         <div className="icons flex flex-row">
             <div className="circ circ-1"></div>
             <div className="circ circ-2"></div>
