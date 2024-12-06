@@ -30,23 +30,35 @@ const testChat = [
     state: "typing",
     message: `Do you want to hear another one?`,
   },
+  {
+    user: "ai",
+    state: "typing",
+  },
 ];
 
 function Conversation({ title, summary }) {
   return (
-    <div className="conversation">
+    <div className="conversation flex-1 h-full w-full">
       <div className="head flex flex-col">
         <div className="title text-2xl font-bold capitalize">{title}</div>
         <div className="summary text-base">{summary}</div>
       </div>
 
-      <div className="body pt-20 flex flex-col w-full items-start mx-0">
-        <UserChat content={testChat[0].message} />
-        <AiChat content={testChat[1].message} />
-        <UserChat content={testChat[2].message} />
-        <AiChat content={testChat[3].message} />
-        <UserChat content={testChat[4].message} />
-        <AiChat content={testChat[5].message} />
+      <div className="body pt-20 flex gap-4 flex-col w-full">
+        {testChat.map((chat, index) => {
+          if (chat.user === "human") {
+            return <UserChat key={index} content={chat.message} />;
+          } else {
+            return <AiChat key={index} content={chat.message} />;
+          }
+        })}
+        {testChat.map((chat, index) => {
+          if (chat.user === "human") {
+            return <UserChat key={index} content={chat.message} />;
+          } else {
+            return <AiChat key={index} content={chat.message} />;
+          }
+        })}
       </div>
     </div>
   );

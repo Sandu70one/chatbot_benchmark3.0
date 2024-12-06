@@ -1,24 +1,11 @@
 .sideMenu{
     background: var(--border-clr-1);
     border: 1px solid var(--border-clr-5);
-
+    max-height: 708px;
     && .menu-head {
         min-width: 18rem;
         color: var(--grey-3);
 
-        && .toggle {
-            background: var(--border-clr-2);
-            border: 1px solid var(--border-clr-4);
-            cursor: pointer;
-            transition: background 0.25s ease, color 0.25s ease;
-        }
-        && .toggle:hover{
-            background: var(--border-clr-4);
-            color: var(--grey-4);
-        }
-        && .toggle:active{
-            background: var(--border-clr-3);
-        }
     }
     && .profile {
 
@@ -62,4 +49,11 @@
 }
 .past-chat-container{
     scrollbar-width: none;
+}
+.plan-btn{
+    transition: background 0.25s ease;
+    cursor: pointer;
+}
+.plan-btn:hover{
+    background: var(--border-clr-2);
 }
