@@ -20,6 +20,7 @@ const sideMenuVariants = {
         transition: {
             duration: 0.75,
             ease: [0.76, 0, 0.24, 1],
+            type: "spring",
         },
     },
     closed: {
@@ -30,6 +31,7 @@ const sideMenuVariants = {
         transition: {
             duration: 0.75,
             ease: [0.76, 0, 0.24, 1],
+            type: "spring",
         },
     },
 };

@@ -1,7 +1,18 @@
 .conversation {
 	&& .head {
+		position: relative;
 		&& .summary {
 			color: var(--grey-2);
+		}
+		&&::after{
+			content: "";
+			width: 100%;
+			position: absolute;
+			height: 3rem;
+			top: 100%;
+			left: 0;
+			/* background: red; */
+			background: linear-gradient(to bottom, #0f0f0f, transparent);
 		}
 	}
 	&& .body {
