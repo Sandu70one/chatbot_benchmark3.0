@@ -1,4 +1,4 @@
 [[redirects]]
-from ="/*"
-to = "/Oriel-AI/index.html"
+from ="/Oriel-AI/*"
+to = "/index.html"
 status = 200
