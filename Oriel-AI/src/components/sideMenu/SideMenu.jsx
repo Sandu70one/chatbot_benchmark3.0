@@ -12,8 +12,9 @@ import {
 } from "lucide-react";
 import ChatHeadBtn from "../chatHeadBtn/ChatHeadBtn";
 
-function SideMenu() {
+function SideMenu({ setProfilePopup }) {
   const [activeButton, setActiveButton] = useState(null);
+  const [slideActive, setSlideActive] = useState(1);
 
   const data = {
     recent: [
@@ -42,18 +43,33 @@ function SideMenu() {
   };
 
   const handleClick = (buttonId) => {
-    setActiveButton(buttonId);
+    setSlideActive(buttonId);
   };
+
+  const slideBtns = [
+    {
+      btn: "Chat history",
+      id: 1,
+      icon: <History size={16}/>
+    },
+    {
+      btn: "Pinned chats",
+      id: 2,
+      icon: <Pin size={16}/>
+    },
+    {
+      btn: "Folder",
+      id: 3,
+      icon: <Folder size={16}/>
+    }
+  ];
 
   return (
     <div>
-      <div className="block md:hidden  mt-2 ml-3   hover:bg-[var(--primary-icon-bg)] ">
-       <AlignLeft size={20} className="cursor-pointer"/>
-        {/* <button className="bg-blue-500 text-white py-2 px-4 rounded">
-          Menu
-        </button> */}
+      <div className="block md:hidden mt-2 ml-3 hover:bg-[var(--primary-icon-bg)]">
+        <AlignLeft size={20} className="cursor-pointer"/>
       </div>
-      <div className="sideMenu hidden md:flex py-4 px-6 flex flex-col rounded-2xl gap-4 h-[calc(100vh-1.5rem)]">
+      <div className="sideMenu hidden md:flex py-4 px-6 flex flex-col rounded-2xl h-[calc(100vh-1.5rem)]">
         {/* first row */}
         <div className="menu-head pb-4 flex justify-between items-center">
           <div className="toggle p-2 rounded-full">
@@ -64,10 +80,11 @@ function SideMenu() {
             <SquarePlus size={20} className="cursor-pointer" />
           </div>
         </div>
+        <div className="seperator"></div>
 
         {/* second row */}
-        <div className="profile pb-6 justify-around gap-8 items-center flex">
-          <div className="account flex justify-between gap-2 items-center">
+        <div className="profile py-2 justify-around -mx-2 gap-8 items-center flex">
+          <div className="account p-2 rounded-xl cursor-pointer select-none flex justify-between gap-2 items-center" onClick={() => setProfilePopup(true)}>
             <div className="profie-pic">
               <img
                 src="/src/assets/profilePic.png"
@@ -80,63 +97,44 @@ function SideMenu() {
               <div className="email text-sm">knaleeka843@gmail.com</div>
             </div>
           </div>
-          <div className="plan py-2 px-3 capitalize text-xs font-medium rounded-lg">
+          <div className="plan cursor-pointer py-2 px-3 capitalize text-xs font-medium rounded-lg">
             free
           </div>
         </div>
+        <div className="seperator"></div>
         {/* third row */}
-        <div className=" mb-3">
-          <div className="flex justify-between items-center mb-4">
-            <div
-              className={`flex justify-center items-center p-2 rounded-xl ${
-                activeButton === 1
-                  ? "bg-[var(--slide-btn-bg-clicked)] text-black"
-                  : "bg-[var(--slide-btn-bg)]"
-              }`}
-              onClick={() => handleClick(1)}
+        <div className="tabs flex gap-3 py-4 mb-1">
+          {slideBtns.map((btn) => (
+            <button
+              key={btn.id}
+              id={btn.id}
+              onClick={() => handleClick(btn.id)}
+              className={
+                slideActive === btn.id
+                  ? "btn font-medium bg-white text-black text-nowrap py-3 px-4 gap-2 items-center rounded-xl flex"
+                  : "text-white bg-transparent btn font-medium text-nowrap py-3 px-4 gap-2 items-center rounded-xl flex hover:bg-[var(--primary-icon-bg)]"
+              }
             >
-              <History className="transform scale-50"></History>
-              <button>Chat history</button>
-            </div>
-
-            <div
-              className={`flex justify-center items-center p-2 rounded-xl ${
-                activeButton === 2
-                  ? "bg-[var(--slide-btn-bg-clicked)] text-black"
-                  : "bg-[var(--slide-btn-bg)]"
-              }`}
-              onClick={() => handleClick(2)}
-            >
-              <Pin className="transform scale-50"></Pin>
-              <button>Pinned chats</button>
-            </div>
-
-            {/* <div
-            className={`flex justify-center items-center p-2 rounded-xl ${
-              activeButton === 3
-                ? "bg-[var(--slide-btn-bg-clicked)] text-black"
-                : "bg-[var(--slide-btn-bg)]"
-            }`}
-            onClick={() => handleClick(3)}
-          >
-            <Folder className="transform scale-50"></Folder>
-            <button>Folder</button>
-          </div> */}
-          </div>
+              {btn.icon}
+              {btn.btn}
+            </button>
+          ))}
+          <div className="fade-right"></div>
         </div>
 
+        <div className="seperator"></div>
         {/* fourth row */}
-        <div className="past-chat-container pl-6 overflow-y-auto overflow-x-hidden mb-auto scrollbar-none ">
+        <div className="past-chat-container px-3 mt-4 mb-6 overflow-y-auto overflow-x-hidden flex flex-col gap-6 scrollbar-none">
           {Object.keys(data).map((key) => (
-            <div className=" " key={key}>
-              <div className="pb-2 capitalize pt-3">
+            <div key={key}>
+              <div className="font-bold pb-2 capitalize pt-3">
                 {key.replace(/([A-Z])/g, " $1").trim()}{" "}
                 {/* Capitalizes the string */}
               </div>
-              <ol className="grid gap-3 pl-2">
+              <ol className="grid gap-3">
                 {data[key].map((item, index) => (
                   <li
-                    className="text-[var(--grey-2)] hover:text-white"
+                    className="text-[var(--grey-2)] cursor-pointer  hover:text-white"
                     key={index}
                   >
                     {trimText(item)}
@@ -146,13 +144,14 @@ function SideMenu() {
             </div>
           ))}
         </div>
+        <div className="seperator"></div>
 
         {/* fifth row */}
-        <div className="flex justify-around  items-center mt-auto">
-          <div className="rounded-full p-2  bg-[var(--primary-icon-bg)]">
-            <Crown></Crown>
+        <div className="plan-btn flex justify-around items-center pt-4">
+          <div className="rounded-full p-2 bg-[var(--primary-icon-bg)]">
+            <Crown />
           </div>
-          <div className="flex flex-col  items-left ">
+          <div className="flex flex-col items-left">
             <div>Upgrade plan</div>
             <div className="text-sm text-[var(--grey-2)]">
               Take your experience to the next level
