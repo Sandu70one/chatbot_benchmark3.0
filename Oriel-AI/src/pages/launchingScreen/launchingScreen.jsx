@@ -37,7 +37,7 @@ return (
 					/>
 				</div>
 				<div className="pri-btn">
-					<Link to="/chatting">
+					<Link to="/chat">
 						<PrimaryBtn text="get started" icon={<MoveUpRight size={16} />} />
 					</Link>
 				</div>

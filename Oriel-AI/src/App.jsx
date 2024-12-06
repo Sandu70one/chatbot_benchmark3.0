@@ -10,7 +10,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LaunchingScreen />} />
-          <Route path="/chatting" element={<ChattingScreen />} />
           <Route path="/chat" element={<Chat />} />
         </Routes>
       </BrowserRouter>
