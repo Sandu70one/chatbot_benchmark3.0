@@ -87,7 +87,7 @@ function SideMenu({ setProfilePopup }) {
           <div className="account p-2 rounded-xl cursor-pointer select-none flex justify-between gap-2 items-center" onClick={() => setProfilePopup(true)}>
             <div className="profie-pic">
               <img
-                src="/src/assets/profilePic.png"
+                src="/assets/profilePic.png"
                 className="w-11"
                 alt="naleeka's profile picture"
               />
