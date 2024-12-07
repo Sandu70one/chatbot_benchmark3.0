@@ -1,8 +1,10 @@
 import React from "react";
 import "./profile.css";
-import { Search } from "lucide-react";
+import { CircleX, Search } from "lucide-react";
+import { User, MessageCircle, Voicemail, Settings2, Bell } from "lucide-react";
+import profileImg from "../../assets/profilePic.png";
 
-function profile() {
+function Profile({ setProfilePopup }) {
   const [activeSection, setActiveSection] = React.useState(0);
 
   const handleSectionClick = (section) => {
@@ -10,36 +12,38 @@ function profile() {
   };
 
   return (
-    <div className="text-white ">
+    <div className="profilePop rounded-2xl text-white absolute left-1/2 top-1/2 ">
       <div className="grid grid-cols-12 px-6 pt-3">
-        <div className="col-span-4 flex justify-between ">
-          <div className="font-semibold">Settings</div>
+        <div className="col-span-4 flex justify-between pr-5 pt-1 ">
+          <div className="font-semibold text-xl">Settings</div>
           <div className="text-[var(--grey-1)] hover:text-white">
             <Search />
           </div>
         </div>
         <div className="col-span-8 flex justify-end text-[var(--grey-1)] font-bold hover:text-white  ">
-          <button>X</button>
+          <button onClick={() => setProfilePopup(false)}>
+            <CircleX />
+          </button>
         </div>
       </div>
-      <hr className="border-t-2 border-[var(--secondary-hr-clr)] my-4" />
+      <hr className="border-t-2 border-[var(--secondary-hr-clr)] mt-4" />
 
-      <div className="grid grid-cols-12  w-full ">
+      <div className="grid grid-cols-12 w-full ">
         <div className="col-span-4 flex justify-between">
           <div className="flex flex-col my-6 w-full">
             {[
-              { icon: <User />, label: "Profile" },
-              { icon: <MessageCircle />, label: "Chat" },
-              { icon: <Voicemail />, label: "Voice Settings" },
-              { icon: <Settings2 />, label: "Customize" },
-              { icon: <Bell />, label: "Notification" },
+              { icon: <User fill="#fff" />, label: "Profile" },
+              { icon: <MessageCircle fill="#fff" />, label: "Chat" },
+              { icon: <Voicemail fill="#fff" />, label: "Voice Settings" },
+              { icon: <Settings2 fill="#fff" />, label: "Customize" },
+              { icon: <Bell fill="#fff" />, label: "Notification" },
             ].map((item, index) => (
               <div
                 key={index}
-                className={`py-4 flex justify-center items-center w-full gap-4 cursor-pointer ${
+                className={`py-4 flex justify-start pl-8 items-center w-full gap-4 cursor-pointer ${
                   activeSection === index
                     ? "bg-[var(--profile-btn-bg)] button-selected-color"
-                    : "hover:bg-[var(--profile-btn-bg)]"
+                    : "hover:bg-[var(--profile-btn-bg)] text-[var(--grey-1)]"
                 }`}
                 onClick={() => handleSectionClick(index)}
               >
@@ -72,19 +76,19 @@ function profile() {
               type="email"
               placeholder="naleeka123@gmail.com"
               id="exampleInput"
-              class="w-96 p-4 border border-[var(--secondary-hr-clr)] text-[var(--grey-4)]  rounded-lg bg-transparent focus:outline-none focus:ring-1 focus:ring-[var(--secondary-hr-clr)] focus:border-[var(--secondary-hr-clr)]"
+              className="w-96 p-4 border border-[var(--secondary-hr-clr)] text-[var(--grey-4)]  rounded-lg bg-transparent focus:outline-none focus:ring-1 focus:ring-[var(--secondary-hr-clr)] focus:border-[var(--secondary-hr-clr)]"
               disabled
             />
-            <div class="w-full max-w-sm mx-start">
+            <div className="w-full max-w-sm mx-start">
               <label
                 for="dropdown"
-                class="block text-sm font-medium text-[var(--grey-4)] mb-2"
+                className="block text-sm font-medium text-[var(--grey-4)] mb-2"
               >
                 Language preference
               </label>
               <select
                 id="dropdown"
-                class="w-full p-3  border border-[var(--secondary-hr-clr)] rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-[var(--secondary-hr-clr)] focus:border-[var(--secondary-hr-clr)] "
+                className="w-full p-3  border border-[var(--secondary-hr-clr)] rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-[var(--secondary-hr-clr)] focus:border-[var(--secondary-hr-clr)] "
               >
                 <option value="" disabled selected>
                   Auto detect
@@ -96,7 +100,10 @@ function profile() {
             </div>
 
             <div className="flex justify-end">
-              <button className="bg-[var(--text-field-bg-blocked)] rounded-lg py-2 px-4 mr-2">
+              <button
+                className="bg-[var(--text-field-bg-blocked)] rounded-lg py-2 px-4 mr-2"
+                onClick={() => setProfilePopup(false)}
+              >
                 Cancel
               </button>
               <button className="text-white button-bg-color rounded-lg py-2 px-4 ">
@@ -104,12 +111,11 @@ function profile() {
               </button>
             </div>
           </div>
-          <div className="w-0.5 h-full bg-[var(--grey-1)]"></div>
+          {/* <div className="w-0.5 h-full bg-[var(--grey-1)]"></div> */}
         </div>
-        <div className="col-span-8 mt-6">Profile detail section</div>
       </div>
     </div>
   );
 }
 
-export default profile;
+export default Profile;

@@ -1,6 +1,6 @@
 /* button */
 .button-selected-color{
-    color:#9747FF;
+    color:#fff;
 }
 
 .button-bg-color{
@@ -10,5 +10,8 @@
 .placeholder-white::placeholder {
     color: white;
   }
-
-  
+.profilePop{
+    transform: translate(-50%, -50%);
+    background: var(--border-clr-3);
+    border: var(--border-2);
+}

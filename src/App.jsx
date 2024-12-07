@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LaunchingScreen />} />
           <Route path="/chat" element={<Chat />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/chatting" element={<ChattingScreen />} />
         </Routes>
       </BrowserRouter>
     </>
