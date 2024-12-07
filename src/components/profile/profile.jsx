@@ -1,7 +1,8 @@
 import React from "react";
 import "./profile.css";
 import { Search } from "lucide-react";
-
+import { User, MessageCircle, Voicemail, Settings2, Bell } from "lucide-react";
+import profileImg from "../../assets/profilePic.png";
 function profile() {
   const [activeSection, setActiveSection] = React.useState(0);
 
@@ -104,7 +105,7 @@ function profile() {
               </button>
             </div>
           </div>
-          <div className="w-0.5 h-full bg-[var(--grey-1)]"></div>
+          {/* <div className="w-0.5 h-full bg-[var(--grey-1)]"></div> */}
         </div>
         <div className="col-span-8 mt-6">Profile detail section</div>
       </div>
