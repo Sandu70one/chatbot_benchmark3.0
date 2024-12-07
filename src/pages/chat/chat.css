@@ -82,3 +82,17 @@
         margin-inline: auto;
     }
 }
+
+.toggle {
+    background: var(--border-clr-2);
+    border: 1px solid var(--border-clr-4);
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+.toggle:hover{
+    background: var(--border-clr-4);
+    color: var(--grey-4);
+}
+.toggle:active{
+    background: var(--border-clr-3);
+}

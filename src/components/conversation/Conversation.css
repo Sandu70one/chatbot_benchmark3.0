@@ -1,5 +1,12 @@
-.head {
-  && .summary {
-    color: var(--grey-2);
-  }
+.conversation {
+	&& .head {
+		&& .summary {
+			color: var(--grey-2);
+		}
+	}
+	&& .body {
+		max-height: 400px;
+		overflow-y: scroll;
+		scrollbar-width: none;
+	}
 }
