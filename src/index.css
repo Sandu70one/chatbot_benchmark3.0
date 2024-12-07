@@ -50,6 +50,13 @@
   
   /* slide buttons  */
   --slide-btn-bg-clicked: #ebebeb;
+
+  /* button */
+  --profile-btn-bg: #333333;
+  --profile-btn-text-color: #8E8E8E;
+
+  /* text field */
+  --text-field-bg-blocked: #393939;
 }
 
 html {

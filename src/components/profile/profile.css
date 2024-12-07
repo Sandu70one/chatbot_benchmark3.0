@@ -1,0 +1,14 @@
+/* button */
+.button-selected-color{
+    color:#9747FF;
+}
+
+.button-bg-color{
+    background-color:#9747FF;
+}
+/* Add this to your CSS file */
+.placeholder-white::placeholder {
+    color: white;
+  }
+
+  

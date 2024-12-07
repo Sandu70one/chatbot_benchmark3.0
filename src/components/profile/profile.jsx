@@ -3,6 +3,12 @@ import "./profile.css";
 import { Search } from "lucide-react";
 
 function profile() {
+  const [activeSection, setActiveSection] = React.useState(0);
+
+  const handleSectionClick = (section) => {
+    setActiveSection(section);
+  };
+
   return (
     <div className="text-white ">
       <div className="grid grid-cols-12 px-6 pt-3">
@@ -18,14 +24,85 @@ function profile() {
       </div>
       <hr className="border-t-2 border-[var(--secondary-hr-clr)] my-4" />
 
-      <div className="grid grid-cols-12 h-full ">
+      <div className="grid grid-cols-12  w-full ">
         <div className="col-span-4 flex justify-between">
-          <div className="flex flex-col mt-6">
-            <button className="pt-4 bg-slate-500">1</button>
-            <button>1</button>
-            <button>1</button>
-            <button>1</button>
-            <button>1</button>
+          <div className="flex flex-col my-6 w-full">
+            {[
+              { icon: <User />, label: "Profile" },
+              { icon: <MessageCircle />, label: "Chat" },
+              { icon: <Voicemail />, label: "Voice Settings" },
+              { icon: <Settings2 />, label: "Customize" },
+              { icon: <Bell />, label: "Notification" },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className={`py-4 flex justify-center items-center w-full gap-4 cursor-pointer ${
+                  activeSection === index
+                    ? "bg-[var(--profile-btn-bg)] button-selected-color"
+                    : "hover:bg-[var(--profile-btn-bg)]"
+                }`}
+                onClick={() => handleSectionClick(index)}
+              >
+                {item.icon}
+                {item.label}
+              </div>
+            ))}
+          </div>
+          <div className="w-0.5 h-auto bg-[var(--secondary-hr-clr)]"></div>
+        </div>
+        <div className="col-span-8 mt-6 h-100 ">
+          <div className="flex flex-col ml-9 m-6 gap-4 ">
+            <div>Profile Picture</div>
+            <div>
+              <img
+                src={profileImg}
+                alt="profile image "
+                className="hover:opacity-30 "
+              />
+            </div>
+            <div className="pt-10 text-[var(--grey-4)]">Profile name</div>
+            <input
+              type="text"
+              placeholder="Naleeka Kumarasinghe"
+              id="exampleInput"
+              className="w-96 p-4 border border-[var(--secondary-hr-clr)] rounded-lg bg-transparent focus:outline-none focus:ring-1 focus:ring-white focus:border-white placeholder-white"
+            />
+            <div className="text-[var(--grey-4)]">Email address</div>
+            <input
+              type="email"
+              placeholder="naleeka123@gmail.com"
+              id="exampleInput"
+              class="w-96 p-4 border border-[var(--secondary-hr-clr)] text-[var(--grey-4)]  rounded-lg bg-transparent focus:outline-none focus:ring-1 focus:ring-[var(--secondary-hr-clr)] focus:border-[var(--secondary-hr-clr)]"
+              disabled
+            />
+            <div class="w-full max-w-sm mx-start">
+              <label
+                for="dropdown"
+                class="block text-sm font-medium text-[var(--grey-4)] mb-2"
+              >
+                Language preference
+              </label>
+              <select
+                id="dropdown"
+                class="w-full p-3  border border-[var(--secondary-hr-clr)] rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-[var(--secondary-hr-clr)] focus:border-[var(--secondary-hr-clr)] "
+              >
+                <option value="" disabled selected>
+                  Auto detect
+                </option>
+                <option value="option1 bg-black">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </select>
+            </div>
+
+            <div className="flex justify-end">
+              <button className="bg-[var(--text-field-bg-blocked)] rounded-lg py-2 px-4 mr-2">
+                Cancel
+              </button>
+              <button className="text-white button-bg-color rounded-lg py-2 px-4 ">
+                Save
+              </button>
+            </div>
           </div>
           <div className="w-0.5 h-full bg-[var(--grey-1)]"></div>
         </div>
