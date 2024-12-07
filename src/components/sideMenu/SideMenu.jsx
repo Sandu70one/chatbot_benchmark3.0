@@ -11,7 +11,7 @@ import {
     AlignLeft,
 } from "lucide-react";
 import ChatHeadBtn from "../chatHeadBtn/ChatHeadBtn";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, delay, motion } from "framer-motion";
 
 const sideMenuVariants = {
     open: {
@@ -47,7 +47,7 @@ const contentVariants = {
     exit: {
         opacity: 0,
         transition: {
-            duration: 0.5,
+            duration: 0.25,
         },
     },
 };
@@ -112,12 +112,13 @@ function SideMenu({ setProfilePopup, sideBarActive }) {
             style={{ overflow: "hidden" }} // Ensure container collapses
         >
             <AnimatePresence>
-                    <div
+                    <motion.div
                         variants={contentVariants}
+                        layer
                         initial="initial"
                         animate="enter"
                         exit="exit"
-                        className=""
+                        className="menuContent"
                     >
                         <div className="sideMenu py-4 px-6 flex flex-col rounded-2xl ">
                             {/* first row */}
@@ -213,7 +214,7 @@ function SideMenu({ setProfilePopup, sideBarActive }) {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
             </AnimatePresence>
         </motion.div>
     );

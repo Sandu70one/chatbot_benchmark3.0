@@ -19,6 +19,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import SideMenu from "../../components/sideMenu/SideMenu";
 import Btn1 from "../../components/btn-1/Btn1";
 import Conversation from "../../components/conversation/Conversation";
+import Profile from "../../components/profile/profile";
+
 
 const voiceVariants = {
 	open: {
@@ -136,6 +138,7 @@ function Chat() {
 						}
 					>
 						{profilePopup ? (
+							
 							<button
 								className="tog z-30 left-1/2 top-1/2 fixed p-2 rounded-lg capitalize text-xl font-bold bg-white text-black "
 								onClick={() => setProfilePopup(false)}
