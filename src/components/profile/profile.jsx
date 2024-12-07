@@ -33,10 +33,10 @@ function Profile({ setProfilePopup }) {
           <div className="flex flex-col my-6 w-full">
             {[
               { icon: <User fill="#fff" />, label: "Profile" },
-              { icon: <MessageCircle fill="#fff" />, label: "Chat" },
-              { icon: <Voicemail fill="#fff" />, label: "Voice Settings" },
-              { icon: <Settings2 fill="#fff" />, label: "Customize" },
-              { icon: <Bell fill="#fff" />, label: "Notification" },
+              { icon: <MessageCircle />, label: "Chat" },
+              { icon: <Voicemail />, label: "Voice Settings" },
+              { icon: <Settings2 />, label: "Customize" },
+              { icon: <Bell />, label: "Notification" },
             ].map((item, index) => (
               <div
                 key={index}
