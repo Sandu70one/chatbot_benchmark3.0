@@ -11,17 +11,17 @@ function chattingScreen() {
 
   return (
     <div className="p-3" style={{ backgroundColor: "#171717" }}>
-      <div class="grid grid-cols-12 gap-4 ">
+      <div className="grid grid-cols-12 gap-4 ">
         {/* side bar */}
         <div
-          class="col-span-3 text-white rounded-md side-bar-container"
+          className="col-span-3 text-white rounded-md side-bar-container"
           style={{ backgroundColor: "#2B2B2B" }}
         >
           3 Columns
         </div>
 
         {/* chatting section */}
-        <div class="col-span-9  ">
+        <div className="col-span-9  ">
           {/* <div class="flex flex-row justify-start">
             <div className="relative">
               <button

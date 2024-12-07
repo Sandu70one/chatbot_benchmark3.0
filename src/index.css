@@ -69,3 +69,7 @@ html {
   color: white;
   position: relative;
 }
+::selection{
+  color: black;
+  background: white;
+}
